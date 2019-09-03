@@ -6,16 +6,28 @@
         <description><![CDATA[]]></description>
         <atom:link href="http://sisinhuang.github.io/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 2 Sep 2019 00:00:00 UTC</lastBuildDate>
+        <lastBuildDate>Tue, 3 Sep 2019 00:00:00 UTC</lastBuildDate>
 
+
+<item>
+    <title>直观理解Attention机制</title>
+    <link>http://sisinhuang.github.io/posts/2019-9-Attention-Mechanism/index.html</link>
+    <description><![CDATA[
+<p>Seq2Seq模型通常由一个编码器-解码器结构组成，编码器处理输入序列，并将信息经过编码/压缩/概括到一个固定长度的上下文向量中（thought vector），这个向量理论上是对整个输入序列的概括。解码器由上下文向量初始化，并生成转换后的输出。</p>
+<p>在传统的Seq2Seq模型中，我们舍弃了编码器所有的中间状态，只用最终状态来初始化解码器。这种模式适合较小的序列，但当序列内容变多时，一个状态向量无法概括整个序列的内容。基于经验观察，序列的内容变多，模型的效果会急剧下降。</p>
+<p>而attention的核心思想是不舍弃编码器的中间状态，将所有中间状态合为一系列上下文向量（context vectors），然后初始化解码器。</p>
+]]></description>
+    <pubDate>Tue, 3 Sep 2019 00:00:00 UTC</pubDate>
+    <guid>http://sisinhuang.github.io/posts/2019-9-Attention-Mechanism/index.html</guid>
+</item>
 
 <item>
     <title>理解LSTM网络</title>
     <link>http://sisinhuang.github.io/posts/2019-9-Understanding-LSTM-Networks/index.html</link>
     <description><![CDATA[
-<p>Humans don’t start their thinking from scratch every second. As you read this essay, you understand each word based on your understanding of previous words. You don’t throw everything away and start thinking from scratch again. Your thoughts have persistence.</p>
-<p>Traditional neural networks can’t do this, and it seems like a major shortcoming. For example, imagine you want to classify what kind of event is happening at every point in a movie. It’s unclear how a traditional neural network could use its reasoning about previous events in the film to inform later ones.</p>
-<p>Recurrent neural networks address this issue. They are networks with loops in them, allowing information to persist... <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/index.html">Read more.</a></p>
+<p>每次的思考都不是从头开始的。就像你在阅读的本篇文章，基于之前的积累，你能够理解当前的内容。你不会把经验全部抛弃然后从头开始思考。所以说，思想是具有延续性的。</p>
+<p>但对于传统神经网络来说这个规则是行不通的，这是传统神经网络最大的缺点。如果你想对电影中的每一个场景进行分类，传统神经网络很难做到根据前一个前景来推断下一个场景。</p>
+<p>RNN解决了这一问题，其内部的环形回路保证信息的延续<a href=">http://sisinhuang.github.io/posts/2019-9-Understanding-LSTM-Networks/index.html">Read more.</a></p>
 ]]></description>
     <pubDate>Mon, 2 Sep 2019 00:00:00 UTC</pubDate>
     <guid>http://sisinhuang.github.io/posts/2019-9-Understanding-LSTM-Networks/index.html</guid>
