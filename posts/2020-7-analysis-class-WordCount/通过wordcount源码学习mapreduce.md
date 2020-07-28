@@ -95,6 +95,7 @@ public class WordCount {
 ​	"Hello Hadoop Goodbye Hadoop"
 
 1. Job在执行时，map操作，即完成TokenizerMapper类的方法会得到两组输出（分别是两个文件的）：
+
 ```
 	< Hello, 1>
 	< World, 1>
@@ -164,6 +165,8 @@ public class WordCount {
 ​	**“IntWritable”**是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
 
 
+
+***
 参考资料：
 [案例单词计数-WordCount](https://my.oschina.net/gently/blog/669168)
 [Why we use IntWritable instead of Int?](https://community.cloudera.com/t5/Support-Questions/Why-we-use-IntWritable-instead-of-Int-Why-we-use/td-p/228098)
