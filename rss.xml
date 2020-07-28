@@ -8,6 +8,13 @@
                    type="application/rss+xml" />
         <lastBuildDate>Tue, 3 Sep 2019 00:00:00 UTC</lastBuildDate>
 
+<item>
+    <title>代码从Pytorch到Tensorflow</title>
+    <link>http://sisinhuang.github.io/posts/2020-7-Pytorch2Tensorflow/index.html</link>
+    <description></description>
+    <pubDate>Tue, 28 Jul 2020 00:00:00 UTC</pubDate>
+    <guid>http://sisinhuang.github.io/posts/2020-7-Pytorch2Tensorflow/index.html</guid>
+</item>
 
 <item>
     <title>直观理解Attention机制</title>
