@@ -154,20 +154,20 @@ public class WordCount {
 
 ​	LongWritable是针对Long类型的WritableComparable接口，IntWritable是针对Int类型的WritableComparable接口。
 
-​	**"Comparable"**接口的抽象方法能快速比较两个对象的大小
+​	__"Comparable"__接口的抽象方法能快速比较两个对象的大小
 
-​	**"Writable"**接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
+​	__"Writable"__接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
 
-​	**"WritableComparable"**是上面两种接口的结合。
+​	__"WritableComparable"__是上面两种接口的结合。
 
-​	**"int"**作为原始类型不能用在键值对中。Integer是它的包装器类。
+​	__"int"__作为原始类型不能用在键值对中。Integer是它的包装器类。
 
-​	**"IntWritable"**是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
+​	__"IntWritable"__是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
 
 
 
 -----------
-参考资料：
+参考资料：<br>
 [案例单词计数-WordCount](https://my.oschina.net/gently/blog/669168) <br>
 [Why we use IntWritable instead of Int?](https://community.cloudera.com/t5/Support-Questions/Why-we-use-IntWritable-instead-of-Int-Why-we-use/td-p/228098)<br>
 [Hadoop中文文档](https://hadoop.apache.org/docs/r1.0.4/cn/mapred_tutorial.html)<br>
