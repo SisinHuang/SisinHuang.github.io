@@ -95,11 +95,13 @@ public class WordCount {
 ​	"Hello Hadoop Goodbye Hadoop"
 
 1. Job在执行时，map操作，即完成TokenizerMapper类的方法会得到两组输出（分别是两个文件的）：
-
+```
 	< Hello, 1>
 	< World, 1>
 	< Bye, 1>
 	< World, 1>
+```
+
 ```
 < Hello, 1>
 < Hadoop, 1>
@@ -133,21 +135,21 @@ public class WordCount {
 
 ## WordCount代码部分细节：
 
-### 加载配置文件（代码第56行）
+### 1. 加载配置文件（代码第56行）
 
 ​	运行mapreduce程序前都要初始化Configuration，该类主要是读取mapreduce系统配置信息，这些信息包括hdfs还有mapreduce，也就是安装hadoop时候的配置文件例如：core-site.xml、hdfs-site.xml和mapred-site.xml等等文件里的信息。
 
 ​	程序员开发mapreduce时候只是在填空，在map函数和reduce函数里编写实际进行的业务逻辑，其它的工作都是交给mapreduce框架自己操作的。conf包下的配置文件会告诉框架完成任务时需要的资源和信息，比如hdfs的位置，jobstracker的位置。
 
-### 装载编写的程序（代码第61行）
+### 2. 装载编写的程序（代码第61行）
 
 ​	虽然编写mapreduce程序时，我们只需要实现map函数和reduce函数，但是实际开发过程中要实现三个类，第三个类是为了配置mapreduce如何运行map和reduce函数，准确的说就是构建一个mapreduce能执行的job了，例如WordCount类。
 
-### combine操作（代码第66行）
+### 3. combine操作（代码第66行）
 
 ​	在mapreduce操作中，combine操作是可选的。但是加上combine操作会让代码效率更高。
 
-### 为什么使用IntWritable而不是Int？为什么使用LongWritable而不是Long？（代码第19、38行）
+### 4. 为什么使用IntWritable而不是Int？为什么使用LongWritable而不是Long？（代码第19、38行）
 
 ​	LongWritable是针对Long类型的WritableComparable接口，IntWritable是针对Int类型的WritableComparable接口。
 
@@ -157,9 +159,9 @@ public class WordCount {
 
 ​	**“WritableComparable”**是上面两种接口的结合。
 
-​	**"int"**作为原始类型不能用在键值对中。Integer是它的包装器类。
+​	**“int”**作为原始类型不能用在键值对中。Integer是它的包装器类。
 
-​	**"IntWritable"**是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
+​	**“IntWritable”**是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
 
 
 参考资料：
