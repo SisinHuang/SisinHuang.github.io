@@ -1,6 +1,6 @@
-### pytorch向tensorflow的转移
+# pytorch向tensorflow的转移
 
-#### 1. pytorch的pth权重文件转换为tensorflow的ckpt文件[1]
+## 1. pytorch的pth权重文件转换为tensorflow的ckpt文件[1]
 
 ```python
 import tensorflow as tf
@@ -18,7 +18,7 @@ def convert(pth_path, ckpt_path):
 		saver.save(sess, ckpt_path)
 ```
 
-#### 2. 查看ckpt文件中的权重名称和权重值[2]
+## 2. 查看ckpt文件中的权重名称和权重值[2]
 
 ```python
 import os
@@ -34,7 +34,7 @@ for key in var_to_shape_map:
     print(reader.get_tensor(key))
 ```
 
-#### 3. pytorch中的num_batches_tracked[3]
+## 3. pytorch中的num_batches_tracked[3]
 
 从PyTorch 0.4.1开始, BN层中新增加了一个参数 track_running_stats,
 
@@ -47,7 +47,7 @@ BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True
 ​	训练时用来统计训练时的forward过的min-batch数目,每经过一个min-batch, track_running_stats+=1
 如果没有指定momentum, 则使用1/num_batches_tracked 作为因数来计算均值和方差(running mean and variance).
 
-#### 4. 加载pretrained model出现的大量adam变量丢失[4]
+## 4. 加载pretrained model出现的大量adam变量丢失[4]
 
 这是由于 要恢复的变量设置 和 optimizer的摆放位置出错造成的。原因很简单，在你指定
 
@@ -80,11 +80,11 @@ opt = tf.train.AdamOptimizer(learning_rate=lr_v)
 问题就可以解决。
 
 
-#### 函数方面
+## 函数方面
 
 *“x”表示一个向量或矩阵*
 
-##### 1. 向量的形状
+### 1. 向量的形状
 
 ```
 x.size() ==> x.get_shape() 或 x.shape 或 tf.shape(x)
@@ -98,17 +98,17 @@ x.size() ==> x.get_shape() 或 x.shape 或 tf.shape(x)
 
 ​	总结：tf.shape(x)会得到一个整型类型的向量，这个向量的值在运行时确定且不是None；但x.shape()和x.get_shape()会直接返回一个代表x形状的静态列表或元组，如果x的形状没有被声明，函数会直接返回None。[5]
 
-##### 2. 乘法
+### 2. 乘法
 
 <https://zhuanlan.zhihu.com/p/77113823>
 
-##### 3. 逆矩阵
+### 3. 逆矩阵
 
 ```
 torch.inverse(x) ==> tf.matrix_inverse(x)
 ```
 
-##### 4. 正则化
+### 4. 正则化
 
 ```
 torch.nn.functional.normalize(input, p=2, dim=1, eps=1e-12, out=None)
@@ -143,13 +143,13 @@ tf.norm(tensor, ord='elucidean', axis=None, keep_dims=False, name=None)
 
 - ValueError：如果 ord 或者 axis 是无效的.
 
-##### 5. torch.one_hot(x, depth) ==> tf.one_hot(x, depth)
+### 5. torch.one_hot(x, depth) ==> tf.one_hot(x, depth)
 
-##### 6. torch.std(x, axis=None, keepdims=False) ==> tf.keras.backend.std(x, axis=None, keepdims=False)
+### 6. torch.std(x, axis=None, keepdims=False) ==> tf.keras.backend.std(x, axis=None, keepdims=False)
 
-##### 7. torch.exp(x) ==> tf.exp(x)
+### 7. torch.exp(x) ==> tf.exp(x)
 
-##### 8. 元素取反或根据条件改变值
+### 8. 元素取反或根据条件改变值
 
 ​	condition表示特定的条件值
 
