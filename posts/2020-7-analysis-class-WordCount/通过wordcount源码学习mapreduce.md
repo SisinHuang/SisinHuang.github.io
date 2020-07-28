@@ -3,6 +3,7 @@
 ## WordCount代码分析：
 
 ```java
+
 import java.io.IOException;
 import java.util.StringTokenizer;
 
@@ -21,21 +22,22 @@ public class WordCount {
   public static class TokenizerMapper
        extends Mapper<Object, Text, Text, IntWritable>{
 
-    private final static IntWritable one = new IntWritable(1);
-    private Text word = new Text();
+private final static IntWritable one = new IntWritable(1);
+private Text word = new Text();
 
-    public void map(Object key, Text value, Context context
-                    ) throws IOException, InterruptedException {
-      // 通过StringTokenizer 以空格为分隔符将一行切分为若干tokens
-      // 将每一行拆分成一个个的单词，以<word，1>作为map方法的结果输出。
-      StringTokenizer itr = new StringTokenizer(value.toString());
-      // 遍历所有的tokens
-      while (itr.hasMoreTokens()) {
-        word.set(itr.nextToken());
-        // 调用RecordWriter类的write方法
-        context.write(word, one);
-      }
-    }
+public void map(Object key, Text value, Context context
+                ) throws IOException, InterruptedException {
+  // 通过StringTokenizer 以空格为分隔符将一行切分为若干tokens
+  // 将每一行拆分成一个个的单词，以<word，1>作为map方法的结果输出。
+  StringTokenizer itr = new StringTokenizer(value.toString());
+  // 遍历所有的tokens
+  while (itr.hasMoreTokens()) {
+    word.set(itr.nextToken());
+    // 调用RecordWriter类的write方法
+    context.write(word, one);
+  }
+}
+
   }
 
   public static class IntSumReducer
@@ -82,6 +84,7 @@ public class WordCount {
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
+
 ```
 
 ## WordCount代码输出分析：
@@ -154,15 +157,15 @@ public class WordCount {
 
 ​	LongWritable是针对Long类型的WritableComparable接口，IntWritable是针对Int类型的WritableComparable接口。
 
-​	__"Comparable"__接口的抽象方法能快速比较两个对象的大小
+​	<b>Comparable</b>接口的抽象方法能快速比较两个对象的大小
 
-​	__"Writable"__接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
+​	<b>Writable</b>接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
 
-​	__"WritableComparable"__是上面两种接口的结合。
+​	<b>WritableComparable</b>是上面两种接口的结合。
 
-​	__"int"__作为原始类型不能用在键值对中。Integer是它的包装器类。
+​	<b>int</b>作为原始类型不能用在键值对中。Integer是它的包装器类。
 
-​	__"IntWritable"__是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
+​	<b>IntWritable</b>是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
 
 
 
