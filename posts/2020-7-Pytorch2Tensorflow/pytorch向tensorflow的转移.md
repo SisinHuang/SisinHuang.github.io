@@ -161,9 +161,9 @@ tf.norm(tensor, ord='elucidean', axis=None, keep_dims=False, name=None)
 
 参考资料：
 
-[1]: <https://www.zhihu.com/question/317353538/answer/924705912>	"pytorch的pth权重文件如何转换为tensorflow的ckpt文件？"
-[2]: <https://blog.csdn.net/Geoffrey_MT/article/details/82690340>	"tensorflow怎么查看.ckpt内保存的权重名和权重值"
-[3]: <https://blog.csdn.net/shanglianlm/article/details/101394508>	"PyTorch中BN层中新加的 num_batches_tracked 有什么用?"
-[4]: https://blog.csdn.net/shwan_ma/java/article/details/82868751	"【tensorflow】加载pretrained model出现的大量adam变量丢失"
-[5]:<https://github.com/tensorflow/models/issues/6245>	"TypeError: Failed to convert object of type &lt;class &#39;list&#39;&gt; to Tensor. Contents: [1, 1, Dimension(None)]"
+[pytorch的pth权重文件如何转换为]: https://www.zhihu.com/question/317353538/answer/924705912
+[tensorflow怎么查看.ckpt内保存的权重名和权重值]: <https://blog.csdn.net/Geoffrey_MT/article/details/82690340>
+[PyTorch中BN层中新加的 num_batches_tracked 有什么用?]: <https://blog.csdn.net/shanglianlm/article/details/101394508>
+[【tensorflow】加载pretrained model出现的大量adam变量丢失]: https://blog.csdn.net/shwan_ma/java/article/details/82868751
+[TypeError: Failed to convert object of type &amp;lt;class &amp;#39;list&amp;#39;&amp;gt; to Tensor. Contents: [1, 1, Dimension(None)\]]:<https://github.com/tensorflow/models/issues/6245>
 
