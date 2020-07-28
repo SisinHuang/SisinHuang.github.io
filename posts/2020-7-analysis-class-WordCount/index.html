@@ -31,8 +31,7 @@
     <link href="../../comments/inlineDisqussions.css" rel="stylesheet">
 
     <!--Highlight-->
-    <!--<link href="../../highlight/styles/github.css" rel="stylesheet">-->
-    <link href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/atelier-lakeside-dark.min.css" rel="stylesheet"/>
+    <link href="../../highlight/styles/github.css" rel="stylesheet">
     <link href="../../favicon.ico" rel="shortcut icon" />
 
     <!--<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
@@ -57,7 +56,19 @@
             }
             xhr.open("GET", "通过wordcount源码学习mapreduce.md", true);//注意路径问题读取data.txt文件的内容。
             xhr.send();
-        }         
+        }
+        (function() {
+          var pre = document.getElementsByTagName('pre'),
+            pl = pre.length;
+          for (var i = 0; i < pl; i++) {
+            pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+            var num = pre[i].innerHTML.split(/\n/).length;
+            for (var j = 0; j < (num - 1); j++) {
+              var line_num = pre[i].getElementsByTagName('span')[0];
+              line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+            }
+          }
+        })();         
     </script>
 </head>
 
@@ -122,14 +133,8 @@
 
   <script src="../../bootstrap/js/bootstrap.min.js"></script>
 
-  <!--
   <script src="../../highlight/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-  -->
-  <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="//cdn.bootcss.com/highlightjs-line-numbers.js/1.1.0/highlightjs-line-numbers.min.js"></script>
-  <script>hljs.initLineNumbersOnLoad();</script>
 
   <script src="../../js/footnotes.js"></script>
 

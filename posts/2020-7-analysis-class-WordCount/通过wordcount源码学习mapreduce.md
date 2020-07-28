@@ -157,15 +157,15 @@ public void map(Object key, Text value, Context context
 
 ​	LongWritable是针对Long类型的WritableComparable接口，IntWritable是针对Int类型的WritableComparable接口。
 
-​	<b>Comparable</b>接口的抽象方法能快速比较两个对象的大小
+​	<b>"Comparable"</b>接口的抽象方法能快速比较两个对象的大小
 
-​	<b>Writable</b>接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
+​	<b>"Writable"</b>接口能以序列化的形式写数据到本地磁盘。因为JAVA的序列化笨重并且缓慢，所有Hadoop用Writable实现序列化和反序列化。
 
-​	<b>WritableComparable</b>是上面两种接口的结合。
+​	<b>"WritableComparable"</b>是上面两种接口的结合。
 
-​	<b>int</b>作为原始类型不能用在键值对中。Integer是它的包装器类。
+​	<b>"int"</b>作为原始类型不能用在键值对中。Integer是它的包装器类。
 
-​	<b>IntWritable</b>是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
+​	<b>"IntWritable"</b>是Hadoop环境中能更快实现序列化Integer变体。比JAVA的序列化表现得好。
 
 
 
