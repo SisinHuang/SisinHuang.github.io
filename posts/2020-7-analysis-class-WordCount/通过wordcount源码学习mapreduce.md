@@ -97,10 +97,10 @@ public class WordCount {
 1. Job在执行时，map操作，即完成TokenizerMapper类的方法会得到两组输出（分别是两个文件的）：
 
 ```
-	< Hello, 1>
-	< World, 1>
-	< Bye, 1>
-	< World, 1>
+< Hello, 1>
+< World, 1>
+< Bye, 1>
+< World, 1>
 ```
 
 ```
